@@ -26,12 +26,17 @@ C can be placed before D (500) and M (1000) to make 400 and 900.
 Given an integer, convert it to a roman numeral.
 */
 
+import java.util.Scanner;
+
 public class IntegerToRoman {
 
     static String s = "";
 
     public static void main(String[] args) {
-        System.out.println(intToRoman(58));
+        System.out.println("Please enter an integer: ");
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        System.out.println(intToRoman(i));
     }
 
     public static String intToRoman(int num) {
@@ -72,7 +77,7 @@ public class IntegerToRoman {
         if (num / 4 >= 1) {
             num = theMath(4, num, "IV");
         }
-        if (num / 1 >= 1) {
+        if (num >= 1) {
             num = theMath(1, num, "I");
         }
         return s;
