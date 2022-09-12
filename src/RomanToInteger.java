@@ -29,7 +29,7 @@ Given a roman numeral, convert it to an integer.
 public class RomanToInteger {
 
     public static void main(String[] args) {
-        System.out.println(romanToInt("MCMXCIV"));
+        System.out.println(romanToInt("MCMXCV"));
     }
 
     public static int romanToInt(String s) {
@@ -37,32 +37,18 @@ public class RomanToInteger {
         for (int i = 0; i < s.length(); i++) {
             if (i == s.length()-1) {
                 switch (s.charAt(i)) {
-                    case 'I':
-                        total += 1;
-                        break;
-                    case 'V':
-                        total += 5;
-                        break;
-                    case 'X':
-                        total += 10;
-                        break;
-                    case 'L':
-                        total += 50;
-                        break;
-                    case 'C':
-                        total += 100;
-                        break;
-                    case 'D':
-                        total += 500;
-                        break;
-                    case 'M':
-                        total += 1000;
-                        break;
+                    case 'I' -> total += 1;
+                    case 'V' -> total += 5;
+                    case 'X' -> total += 10;
+                    case 'L' -> total += 50;
+                    case 'C' -> total += 100;
+                    case 'D' -> total += 500;
+                    case 'M' -> total += 1000;
                 }
             }
             else {
                 switch (s.charAt(i)) {
-                    case 'I':
+                    case 'I' -> {
                         if (s.charAt(i + 1) == 'V') {
                             total += 4;
                             i++;
@@ -71,13 +57,10 @@ public class RomanToInteger {
                         if (s.charAt(i + 1) == 'X') {
                             total += 9;
                             i++;
-                            break;
                         } else total += 1;
-                        break;
-                    case 'V':
-                        total += 5;
-                        break;
-                    case 'X':
+                    }
+                    case 'V' -> total += 5;
+                    case 'X' -> {
                         if (s.charAt(i + 1) == 'L') {
                             total += 40;
                             i++;
@@ -86,13 +69,10 @@ public class RomanToInteger {
                         if (s.charAt(i + 1) == 'C') {
                             total += 90;
                             i++;
-                            break;
                         } else total += 10;
-                        break;
-                    case 'L':
-                        total += 50;
-                        break;
-                    case 'C':
+                    }
+                    case 'L' -> total += 50;
+                    case 'C' -> {
                         if (s.charAt(i + 1) == 'D') {
                             total += 400;
                             i++;
@@ -101,15 +81,10 @@ public class RomanToInteger {
                         if (s.charAt(i + 1) == 'M') {
                             total += 900;
                             i++;
-                            break;
                         } else total += 100;
-                        break;
-                    case 'D':
-                        total += 500;
-                        break;
-                    case 'M':
-                        total += 1000;
-                        break;
+                    }
+                    case 'D' -> total += 500;
+                    case 'M' -> total += 1000;
                 }
             }
         }

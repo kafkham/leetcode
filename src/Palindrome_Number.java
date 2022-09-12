@@ -10,7 +10,7 @@ For example, 121 is a palindrome while 123 is not.
 public class Palindrome_Number {
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome(0));
+        System.out.println(isPalindrome(1011));
     }
 
     public static boolean isPalindrome(int x) {

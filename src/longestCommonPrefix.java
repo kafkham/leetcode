@@ -12,15 +12,13 @@ Output: ""
 
 * */
 
-import javax.management.StringValueExp;
-
 public class longestCommonPrefix {
     public static void main(String[] args) {
         String [] strs ={"dog","dogecar","dogkcar"};
-        System.out.println(longestCommonPrefix(strs));
+        System.out.println(findLongestCommonPrefix(strs));
     }
 
-    public static String longestCommonPrefix(String[] strs) {
+    public static String findLongestCommonPrefix(String[] strs) {
 
         String[] prefixes = new String[strs.length];
 
@@ -34,11 +32,8 @@ public class longestCommonPrefix {
                 if (!(String.valueOf(prefixes[j]) == String.valueOf(prefixes[j+1]))) {
                     matchingPrefixes = false;
                 }
-
             }
         }
-
-
         return "test";
     }
 }
